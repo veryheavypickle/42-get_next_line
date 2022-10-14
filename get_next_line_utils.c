@@ -1,12 +1,17 @@
 #include "get_next_line.h"
 
-/* copied from the libft */
+/* copied from the libft - modified to initialise string if needed */
 char	*ft_strjoin(char const *s1, char const *s2)
 {
 	size_t	len_s1;
 	size_t	len_s2;
 	char	*str;
 
+	if (!s1)
+	{
+		s1 = (char *)malloc(1 * sizeof(char));
+		s1[0] = '\0';
+	}
 	if (!s1 || !s2)
 		return (NULL);
 	len_s1 = ft_strlen(s1);
