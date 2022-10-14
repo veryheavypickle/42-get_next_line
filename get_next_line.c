@@ -9,6 +9,8 @@
  * read_line is a recursive function that will (hopefully)
  * read the file until it finds the end of line
  *
+ * the if (ft_strchr(line, '\n')) moves the pointer to the start of the next line
+ *
  * int num_bytes is a variable that counts number of
  * bytes returned from read
  * if read returns 0, then it is end of file
@@ -29,6 +31,11 @@ char	*read_line(int fd, char* line)
 	buf = malloc(sizeof(char) * BUFFER_SIZE + 1);
 	if (!buf)
 		return (NULL);
+	if (ft_strchr(line, '\n'))
+	{
+		line = ft_strchr(line, '\n');
+		line++;
+	}
 	while(!ft_strchr(line, '\n') && num_bytes > 0)
 	{
 		num_bytes = read(fd, buf, BUFFER_SIZE);
