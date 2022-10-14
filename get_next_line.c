@@ -30,7 +30,7 @@ char	*read_line(int fd, char* line)
 	while(!ft_strchr(line, '\n') && num_bytes > 0)
 	{
 		num_bytes = read(fd, buf, BUFFER_SIZE);
-		buff[num_bytes] = '\0';
+		buf[num_bytes] = '\0';
 		line = ft_strjoin(line, buf);
 	}
 	free(buf);
@@ -39,8 +39,12 @@ char	*read_line(int fd, char* line)
 
 char	*get_next_line(int fd)
 {
-	char	*line;
+	static char	*line;
 
 	if (fd < 0 || BUFFER_SIZE < 1)
 		return (NULL);
+	line = read_line(fd, line);
+	if (!line)
+		return (NULL);
+	return (line);
 }
