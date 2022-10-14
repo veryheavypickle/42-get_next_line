@@ -52,6 +52,7 @@ char	*get_next_line(int fd)
 {
 	static char	*line;
 	char		*clean_line;
+	char 		*str;
 
 	if (fd < 0 || BUFFER_SIZE < 1)
 		return (NULL);
@@ -61,5 +62,7 @@ char	*get_next_line(int fd)
 	clean_line = (char *)malloc(sizeof(char) * ft_strlen(line) + 1);
 	clean_line = ft_memcpy(clean_line, line, ft_strlen(line));
 	clean_line[ft_strlen(clean_line) - 1] = 0;
-	return (clean_line);
+	str = clean_line;
+	free(clean_line);
+	return (str);
 }
