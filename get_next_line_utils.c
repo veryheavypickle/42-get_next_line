@@ -1,7 +1,7 @@
 #include "get_next_line.h"
 
 /* copied from the libft - modified to initialise string if needed */
-char	*ft_strjoin(char const *s1, char const *s2)
+char	*ft_strjoin(char *s1, char const *s2)
 {
 	size_t	len_s1;
 	size_t	len_s2;

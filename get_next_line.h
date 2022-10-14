@@ -19,7 +19,7 @@
 char	*get_next_line(int fd);
 
 /* get_next_line_utils.c */
-char	*ft_strjoin(char const *s1, char const *s2);
+char	*ft_strjoin(char *s1, char const *s2);
 size_t	ft_strlen(const char *s);
 void	*ft_memcpy(void *dest_any, const void *src_any, size_t size);
 char	*ft_strchr(const char *s, int c);
