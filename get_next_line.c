@@ -1,15 +1,27 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   get_next_line.c                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: xcarroll <xcarroll@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/11/20 16:51:15 by xcarroll          #+#    #+#             */
+/*   Updated: 2022/11/20 16:53:28 by xcarroll         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "get_next_line.h"
 
-char	*read_line(int fd, char* line)
+char	*read_line(int fd, char *line)
 {
 	char	*buf;
-	int 	num_bytes;
+	int		num_bytes;
 
 	num_bytes = 1;
 	buf = malloc(sizeof(char) * BUFFER_SIZE + 1);
 	if (!buf)
 		return (NULL);
-	while(!ft_strchr(line, '\n') && num_bytes > 0)
+	while (!ft_strchr(line, '\n') && num_bytes > 0)
 	{
 		num_bytes = read(fd, buf, BUFFER_SIZE);
 		if (num_bytes < 0)

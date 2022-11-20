@@ -1,10 +1,22 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   get_next_line.h                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: xcarroll <xcarroll@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/11/20 16:51:39 by xcarroll          #+#    #+#             */
+/*   Updated: 2022/11/20 16:53:41 by xcarroll         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef GET_NEXT_LINE_H
 # define GET_NEXT_LINE_H
 
 /* for malloc and all that */
 # include <stdlib.h>
 /* for write() and read() */
-#include <unistd.h>
+# include <unistd.h>
 
 /* define the buffer */
 # ifndef BUFFER_SIZE
